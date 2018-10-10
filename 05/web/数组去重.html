@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            如果考虑最终的值的类型不能改变：
+            ①创建新变量来存储新数组
+            ②对多维数据进行循环
+            ③通过递归对值依旧是数组的继续进行循环
+            ④如果循环的值不是数组，则判断当前的值是否在新的数组中，如果不存在，添加，存在不做任何操作
+            如果不考虑最终结果值的类型：
+            ①将多维数组进行 toString 操作，快速返回一串原始值
+            ②通过 Array.split()方法，通过’,’（逗号）将这串原始值转换成数组，此时数组中的值类型是 String
+            ③借助 Set 数据结构值的唯一性，实例化一个新的 Set 对象，将上面的数组传入 Set，即可将重复的值删除
+            掉，只保留不同的值
+    </div>
+    <script>
+       function arry(arr){
+           var result =arr;
+           for(var i=0;i <arr.length;i++){
+               for(var j=0;j<arr.length;j++){
+                   temp= arr[i];
+                   if((i+j+1)<arr.length && temp===arr[i+j+1]){
+                       result.splice(i+j+1,1);
+                   }
+               }
+           }
+           return result;
+       }
+      var a= [2,3,5,6,2,5,6,7,2];
+      var b= arry(a);
+      alert(b);
+      setTimeout(
+          function(){
+              alert("Hello")
+        },3000);
+      
+    </script>
+</body>
+</html>

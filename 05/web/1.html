@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       #content,#sidebar,#footer{
+             border: 1px solid #ccc;
+       }
+       #wrap{
+           display: table;
+           width: 100%;
+       }
+       #content{
+           display: table-cell;
+       }
+       #sidebar{
+           display: table-cell;
+           width: 200px;
+       }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+         <div id="content" style="height: 340px;">自适应</div>
+         <div id="sidebar" style="height: 240px;">固定</div>
+    </div>
+    <div id="footer">够看</div>
+    <input type="text" value="baidu" id="aa">
+    <script>
+      var box=document.querySelector('#aa');
+      box.onmouseover =function(){
+          this.select();
+      }
+    </script>
+</body>
+</html>
